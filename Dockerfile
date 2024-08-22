@@ -1,5 +1,5 @@
 # Stage 1: Build the application with Maven
-FROM maven:3.8.6-openjdk-17 as build
+FROM maven:3.8.7-openjdk-18 as build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -17,7 +17,7 @@ COPY . .
 RUN mvn clean install -DskipTests
 
 # Stage 2: Run the application
-FROM openjdk:17-jdk-slim
+FROM openjdk:3-openjdk-18-slim
 
 # Set the working directory inside the container
 WORKDIR /app
