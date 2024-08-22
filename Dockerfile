@@ -6,6 +6,9 @@ WORKDIR /app
 
 # Copy the pom.xml and download dependencies
 COPY pom.xml .
+COPY ./lib/TwsApi.jar .
+
+#RUN mvn install:install-file -Dfile=./TwsApi.jar -DgroupId=com.ib -DartifactId=TwsApi -Dversion=1.0 -Dpackaging=jar
 
 # Download dependencies (this step is separate to leverage Docker caching)
 RUN mvn dependency:go-offline -B
