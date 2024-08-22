@@ -17,7 +17,7 @@ COPY . .
 RUN mvn clean install -DskipTests
 
 # Stage 2: Run the application
-FROM openjdk:3-openjdk-18-slim
+FROM openjdk:18-jdk-slim
 
 # Set the working directory inside the container
 WORKDIR /app
